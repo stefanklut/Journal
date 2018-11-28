@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Find the grid view and add the Adapter and OnItemClickListener
         ListView listView = findViewById(R.id.listViewEntries);
-        listView.setAdapter(adapter);
+//        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener());
         listView.setOnItemLongClickListener(new OnItemLongClickListener());
     }
@@ -34,5 +34,11 @@ public class MainActivity extends AppCompatActivity {
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
             return false;
         }
+    }
+
+    public void addEntry(View view){
+        // Open new activity where the entry can be created
+        Intent intent = new Intent(MainActivity.this, InputActivity.class);
+        startActivity(intent);
     }
 }
