@@ -1,17 +1,21 @@
 package com.example.stefan.journal;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 public class JournalEntry implements Serializable {
     private int id;
     private String title;
     private String content;
     private String mood;
-    private Date timestamp;
+    private String timestamp;
 
-    public JournalEntry(int id, String title, String content, String mood, Date timestamp) {
-        this.id = id;
+    public JournalEntry(String title, String content, String mood) {
+        this.title = title;
+        this.content = content;
+        this.mood = mood;
+    }
+
+    public JournalEntry(String title, String content, String mood, String timestamp) {
         this.title = title;
         this.content = content;
         this.mood = mood;
@@ -50,11 +54,11 @@ public class JournalEntry implements Serializable {
         this.mood = mood;
     }
 
-    public Date getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }
