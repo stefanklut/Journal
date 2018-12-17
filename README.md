@@ -17,13 +17,13 @@ By clicking and holding an entry on the main screen you delete the entry.
 ## Screenshots
 
 ### Opening Screen:
-<img src="doc/Screenshot_20181202-204721.png" width="50%">
+<img src="doc/Screenshot_20181202-204721.png" width="30%">
 
 ### Input entry screen:
-<img src="doc/Screenshot_20181202-204730.png" width="50%">
+<img src="doc/Screenshot_20181202-204730.png" width="30%">
 
 ### Displayed entry:
-<img src="doc/Screenshot_20181202-204745.png" width="50%">
+<img src="doc/Screenshot_20181202-204745.png" width="30%">
 
 ### Landscape mode:
-<img src="doc/Screenshot_20181202-204801.png" width="100%">
+<img src="doc/Screenshot_20181202-204801.png" width="60%">
