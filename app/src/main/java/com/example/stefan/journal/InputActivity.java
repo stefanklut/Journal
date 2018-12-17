@@ -1,12 +1,14 @@
 package com.example.stefan.journal;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -16,6 +18,37 @@ public class InputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input);
+
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener());
+        updateRadioGroup(radioGroup);
+    }
+
+    private class OnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            // If the selected radio button is changed update what button is visible as clicked
+            updateRadioGroup(group);
+        }
+    }
+
+    private void updateRadioGroup(RadioGroup group) {
+        // Get what button is checked
+        int checkedRadioButtonId = group.getCheckedRadioButtonId();
+
+        // Loop over all buttons in the radio button group
+        for (int i = 0; i<group.getChildCount(); i++) {
+            RadioButton radioButton = (RadioButton) group.getChildAt(i);
+
+            if (radioButton.getId() == checkedRadioButtonId) {
+                // If the button was the checked button set the foreground to a border
+                radioButton.setForeground(ContextCompat.getDrawable(this, R.drawable.button_border));
+            } else {
+                // Otherwise set the foreground to null to remove the border
+                radioButton.setForeground(null);
+            }
+        }
     }
 
     public void submitEntry(View view) {
